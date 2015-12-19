@@ -62,7 +62,7 @@
         }
       
         function showCode(el) {
-          var doc = el.contentDocument,
+          var doc = el.contentWindow.document,
               html = doc.getElementsByTagName('head')[0].innerHTML+
                      doc.getElementsByTagName('body')[0].innerHTML,
               pre = document.createElement('pre');
