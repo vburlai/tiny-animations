@@ -18,10 +18,10 @@
         max-width: 980px;
         margin: 0 auto;
       }
-      pre {
+      textarea {
           font-size: 10px;
-          word-wrap: break-word;
           width: 90%;
+          height: 100px;
           border: 1px solid #ccc;
       }
       .warn {
@@ -65,10 +65,11 @@
           var doc = el.contentWindow.document,
               html = doc.getElementsByTagName('head')[0].innerHTML+
                      doc.getElementsByTagName('body')[0].innerHTML,
-              pre = document.createElement('pre');
+              textarea = document.createElement('textarea');
               
-          pre.innerHTML = htmlEncode(html);
-          el.parentNode.appendChild(pre);
+          textarea.innerHTML = htmlEncode(html);
+          textarea.addEventListener('click', function() {this.select();});
+          el.parentNode.appendChild(textarea);
         }
         
         function htmlEncode(str) {
