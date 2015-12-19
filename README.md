@@ -1,2 +1,2 @@
 # tiny-animations
-HTML/CSS/SVG 'loading' indicators which work without loading
+HTML/CSS/SVG 'loading' indicators that work without loading
