@@ -40,11 +40,11 @@
       <![endif]-->
       <h1>HTML/CSS/SVG &apos;loading&apos; indicators that work without loading</h1>
       <section>
-        <h2>Circle 1:</h2>
+        <h2>Circle 1</h2>
         <iframe width=90% height=120 src=src/ta-circle1.html></iframe>
       </section>
       <section>
-        <h2>Circle 2:</h2>
+        <h2>Circle 2</h2>
         <iframe width=90% height=120 src=src/ta-circle2.html></iframe>
       </section>
     </div>
@@ -68,6 +68,7 @@
               textarea = document.createElement('textarea');
               
           textarea.innerHTML = htmlEncode(html);
+          textarea.readOnly = true;
           textarea.addEventListener('click', function() {this.select();});
           el.parentNode.appendChild(textarea);
         }
