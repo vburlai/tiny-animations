@@ -63,8 +63,10 @@
             doc, html, pre;
         
         for (i = 0, l = cmpnts.length; i < l; i++) {
-          cmpnts[i].addEventListener('load', 
+          if (cmpnts[i].addEventListener) {
+            cmpnts[i].addEventListener('load', 
                showCode.bind(null, cmpnts[i]));
+          }
         }
       
         function showCode(el) {
