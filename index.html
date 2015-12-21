@@ -13,6 +13,7 @@
         display: inline-block;
         width: 49%;
         vertical-align: top;
+        position: relative;
       }
       .main {
         max-width: 980px;
@@ -24,6 +25,15 @@
         height: 100px;
         border: 1px solid #ccc;
         overflow: hidden;
+      }
+      textarea:before {
+        content: attr(data-length);
+        position: absolute;
+        right: 10%;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #999;
       }
       .warn {
         background-color: yellow;
