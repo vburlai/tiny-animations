@@ -95,6 +95,7 @@
               
           div.innerText = html.length+' B';
           div.className = 'size';
+          div.setAttribute('title', 'Code size: ' + html.length + ' bytes');
           el.parentNode.appendChild(div);
           
           textarea.innerHTML = htmlEncode(html);
