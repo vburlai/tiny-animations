@@ -95,12 +95,12 @@
               
           span.innerText = html.length+'B';
           span.className = 'size';
-          el.parentNode.appendChild(span);
           
           textarea.innerHTML = htmlEncode(html);
           textarea.readOnly = true;
           textarea.addEventListener('click', function() {this.select();});
           el.parentNode.appendChild(textarea);
+          el.parentNode.appendChild(span);
         }
         
         function htmlEncode(str) {
