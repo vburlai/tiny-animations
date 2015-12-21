@@ -85,6 +85,7 @@
               
           textarea.innerHTML = htmlEncode(html);
           textarea.readOnly = true;
+          textarea.setAttribute('data-length', html.length+'B');
           textarea.addEventListener('click', function() {this.select();});
           el.parentNode.appendChild(textarea);
         }
