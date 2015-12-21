@@ -26,14 +26,13 @@
         border: 1px solid #ccc;
         overflow: hidden;
       }
-      textarea:before {
-        content: attr(data-length);
-        position: absolute;
-        right: 10%;
-        padding: 5px;
-        background-color: #fff;
-        border-radius: 5px;
-        border: 1px solid #999;
+      .size {
+          position: absolute;
+          right: 10%;
+          padding: 2px 5px;
+          background-color: #fff;
+          border: 1px solid #999;
+          font-weight: bold;
       }
       .warn {
         background-color: yellow;
@@ -91,11 +90,15 @@
           var doc = el.contentWindow.document,
               html = doc.getElementsByTagName('head')[0].innerHTML+
                      doc.getElementsByTagName('body')[0].innerHTML,
-              textarea = document.createElement('textarea');
+              textarea = document.createElement('textarea'),
+              span = document.createElement('span');
               
+          span.innerText = html.length+'B';
+          span.className = 'size';
+          el.parentNode.appendChild(span);
+          
           textarea.innerHTML = htmlEncode(html);
           textarea.readOnly = true;
-          textarea.setAttribute('data-length', html.length+'B');
           textarea.addEventListener('click', function() {this.select();});
           el.parentNode.appendChild(textarea);
         }
