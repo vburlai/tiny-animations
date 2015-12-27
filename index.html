@@ -131,8 +131,9 @@
       
         function showCode(el) {
           var doc = el.contentWindow.document,
-              html = doc.getElementsByTagName('head')[0].innerHTML+
-                     doc.getElementsByTagName('body')[0].innerHTML,
+              htmlUnicode = doc.getElementsByTagName('head')[0].innerHTML+
+                            doc.getElementsByTagName('body')[0].innerHTML,
+              html = htmlUnicode.replace(/[\u2600-\u27FF]/g, toUnicodeSequence),
               textarea = document.createElement('textarea'),
               div = document.createElement('div');
               
@@ -154,6 +155,10 @@
                     .replace(/'/g, '&apos;')
                     .replace(/</g, '&lt;')
                     .replace(/>/g, '&gt;');
+        }
+        
+        function toUnicodeSequence(chr) {
+            return '&#x' + chr.charCodeAt(0).toString(16) + ';'
         }
       })();
     </script>
